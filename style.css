@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+body {
+  font-family: "Poppins";
+}
+
+h1 {
+  font-family: "Indie Flower", cursive;
+  text-align: center;
+  letter-spacing: 4px;
+  font-size: 36px;
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+label {
+  background: none;
+  border: 1px solid black;
+  padding: 10px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+  white-space: nowrap;
+}
+label:hover {
+  background: black;
+  color: white;
+}
+input {
+  display: none;
+}
+input:checked + label {
+  background: black;
+  color: white;
+}
+
+/* Menu */
+.menu-area {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+#card {
+  display: flex;
+  gap: 10px;
+  max-width: 700px;
+}
+#card img {
+  height: 170px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+#card .card-info .name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#card .card-info .name p {
+  color: green;
+  font-weight: bold;
+}
+@media (max-width: 600px) {
+  #card {
+    flex-direction: column;
+  }
+  #card img {
+    height: 240px;
+  }
+  label {
+    font-size: 13px;
+    font-weight: 600;
+  }
+}
