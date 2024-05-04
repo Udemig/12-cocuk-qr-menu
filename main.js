@@ -47,9 +47,24 @@ function getMenu() {
 document.addEventListener("DOMContentLoaded", getMenu);
 
 var buttons = document.querySelectorAll("label");
+// seçilen kategoriye göre filtreleme yap
+function filterCategory(e) {
+  // seçilen kategoriye göre filtreleme yap
+  var selected = e.target.dataset.id;
+  console.log(selected);
 
-function filterCategory() {
-  console.log("tıklanıldı");
+  if (selected === "all") {
+    // Hepsi butonuna tıklanıldığında bütün menüyü göster
+    renderMenu(menu);
+  } else {
+    // menü dizisi içerisinde seçtiğimiz kategoriye göre ait ürünleri filtreleyip bir değişkene aktardık
+    var filtred = menu.filter(function (item) {
+      return item.category === selected;
+    });
+
+    // filtrelenmiş veriy ekrana aktardık.
+    renderMenu(filtred);
+  }
 }
 // bütün butonlara olay izleyici ekledik
 buttons.forEach(function (btn) {
